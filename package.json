@@ -2,7 +2,7 @@
   "name": "@curiousyuvi/tquery-hooks",
   "version": "1.0.0",
   "type": "module",
-  "description": "A library of demo TanStack Query hooks",
+  "description": "A library of demo TanStack Query hooks.",
   "repository": {
     "type": "git",
     "url": "git@github.com:curiousyuvi/tquery-hooks"
