@@ -1,0 +1,48 @@
+{
+  "name": "@curiousyuvi/tquery-hooks",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A library of demo TanStack Query hooks",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:curiousyuvi/tquery-hooks"
+  },
+  "keywords": [
+    "tanstack-query-hooks",
+    "hooks",
+    "tanstack-query"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest --no-threads",
+    "coverage": "vitest run --coverage --no-threads"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.26.1",
+    "path": "^0.12.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "superagent": "^8.0.9"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/superagent": "^4.1.16",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "@vitest/coverage-c8": "^0.29.3",
+    "eslint": "^8.36.0",
+    "eslint-plugin-react": "^7.32.2",
+    "jsdom": "^21.1.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0",
+    "vite-plugin-linter": "^2.0.2",
+    "vite-tsconfig-paths": "^4.0.7",
+    "vitest": "^0.29.3"
+  }
+}
