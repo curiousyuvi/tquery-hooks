@@ -19,7 +19,7 @@ describe("[GET] Character", () => {
   });
 
   test("Hook - Failure", async () => {
-    const { result } = renderHook(() => useQuery(getCharacter(84834)), {
+    const { result } = renderHook(() => useQuery(getCharacter(454544)), {
       wrapper: createWrapper(),
     });
 

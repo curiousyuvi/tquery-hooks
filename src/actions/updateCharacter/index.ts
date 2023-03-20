@@ -1,9 +1,12 @@
 import * as request from "superagent";
 import { Character } from "../../interfaces/Character";
 import { API_ENDPOINT } from "../../API";
+import { UpdatedCharacter } from "../../interfaces/UpdatedCharacter";
 
-type UpdateCharacterAPI = (updatedCharacter: any) => Promise<Character>;
-type UpdateCharacter = (updatedCharacter: any) => {
+type UpdateCharacterAPI = (
+  updatedCharacter: UpdatedCharacter
+) => Promise<Character>;
+type UpdateCharacter = (updatedCharacter: UpdatedCharacter) => {
   queryKey: any[];
   queryFn: () => Promise<Character>;
 };
@@ -17,5 +20,5 @@ const updateCharacterAPI: UpdateCharacterAPI = async (character) => {
 
 export const updateCharacter: UpdateCharacter = (updatedCharacter) => ({
   queryFn: () => updateCharacterAPI(updatedCharacter),
-  queryKey: ["post-character"],
+  queryKey: ["post-character", updatedCharacter.id],
 });

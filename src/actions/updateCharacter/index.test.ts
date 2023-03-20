@@ -14,8 +14,12 @@ const updatedCharacter = {
 };
 
 const deleteTestCharacter = async () => {
-  await request.delete(API_ENDPOINT + "/8999999");
-  console.log("Test character deleted!");
+  try {
+    await request.delete(API_ENDPOINT + "/8999999");
+    console.log("Test character deleted!");
+  } catch (err) {
+    console.log("API failed");
+  }
 };
 
 beforeAll(async () => {
@@ -27,22 +31,18 @@ beforeAll(async () => {
   };
 
   const createTestCharacter = async () => {
-    await request.post(API_ENDPOINT).send(newCharacter);
-    console.log("Test character created!");
+    try {
+      await request.post(API_ENDPOINT).send(newCharacter);
+      console.log("Test character created!");
+    } catch (err) {
+      console.log("API failed");
+    }
   };
-  try {
-    await createTestCharacter();
-  } catch (err) {
-    console.log("API failed");
-  }
+  await createTestCharacter();
 });
 
 afterAll(async () => {
-  try {
-    await deleteTestCharacter();
-  } catch (err) {
-    console.log("API failed");
-  }
+  await deleteTestCharacter();
 });
 
 describe("[PUT] Character", () => {

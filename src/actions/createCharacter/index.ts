@@ -15,5 +15,5 @@ const createCharacterAPI: CreateCharacterAPI = async (characeter) => {
 
 export const createCharacter: CreateCharacter = (newCharacter) => ({
   queryFn: () => createCharacterAPI(newCharacter),
-  queryKey: ["post-character"],
+  queryKey: ["post-character", newCharacter.id],
 });

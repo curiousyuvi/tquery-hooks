@@ -16,24 +16,20 @@ const newCharacter = {
 };
 
 const deleteTestCharacter = async () => {
-  await request.delete(API_ENDPOINT + "/9999999");
-  console.log("Test character deleted!");
+  try {
+    await request.delete(API_ENDPOINT + "/9999999");
+    console.log("Test character deleted!");
+  } catch (err) {
+    console.log("API failed");
+  }
 };
 
 beforeAll(async () => {
-  try {
-    await deleteTestCharacter();
-  } catch (err) {
-    console.log("API failed");
-  }
+  await deleteTestCharacter();
 });
 
 afterAll(async () => {
-  try {
-    await deleteTestCharacter();
-  } catch (err) {
-    console.log("API failed");
-  }
+  await deleteTestCharacter();
 });
 
 describe("[POST] Character", () => {
